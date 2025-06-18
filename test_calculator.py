@@ -1,5 +1,5 @@
 import unittest
-from calculator import add, subtract, multiply, divide # Assuming calculator.py is in the same directory or PYTHONPATH
+from calculator import add, subtract, multiply, divide, sqrt # Assuming calculator.py is in the same directory or PYTHONPATH
 
 class TestCalculator(unittest.TestCase):
 
@@ -33,6 +33,17 @@ class TestCalculator(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             divide(10, 0)
+
+    def test_sqrt(self):
+        self.assertEqual(sqrt(4), 2)
+        self.assertEqual(sqrt(9.0), 3.0)
+        self.assertEqual(sqrt(0), 0)
+        self.assertAlmostEqual(sqrt(2), 1.41421356, places=7) # Test with a non-perfect square
+
+        with self.assertRaises(ValueError):
+            sqrt(-1)
+        with self.assertRaises(ValueError):
+            sqrt(-100)
 
 if __name__ == '__main__':
     unittest.main()
