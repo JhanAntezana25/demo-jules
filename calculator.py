@@ -45,7 +45,7 @@ if __name__ == "__main__":
             print("Invalid operation. Please choose from +, -, *, /.")
             continue
 
-        print(f"The result is: {result}")
+        print(f"El resultado es: {result}")
 
         next_calculation = input("Do you want to perform another calculation? (yes/no): ")
         if next_calculation.lower() != 'yes':
