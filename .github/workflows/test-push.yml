@@ -1,0 +1,11 @@
+name: Test Push Event
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Push detected"
